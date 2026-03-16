@@ -16,7 +16,7 @@ let userSelectedDate = null;
 
 btn.disabled = true;
 
-flatpickr('#datetime-picker', {
+const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -38,7 +38,9 @@ flatpickr('#datetime-picker', {
       btn.disabled = false;
     }
   },
-});
+};
+
+flatpickr('#datetime-picker', options);
 
 btn.addEventListener('click', () => {
   btn.disabled = true;
@@ -50,7 +52,7 @@ btn.addEventListener('click', () => {
 
     if (diff <= 0) {
       clearInterval(intervalId);
-      updateClockface({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      updateClockface({ days: '', hours: '', minutes: '', seconds: '' });
       input.disabled = false;
       return;
     }
