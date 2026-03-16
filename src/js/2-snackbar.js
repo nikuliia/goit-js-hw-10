@@ -13,7 +13,7 @@ form.addEventListener('submit', e => {
   createPromise(delay, state)
     .then(value => {
       iziToast.show({
-        message: `✅ Fulfilled promise in ${delay}ms`,
+        message: `✅ Fulfilled promise in ${value}ms`,
         position: 'topRight',
         backgroundColor: '#59a10d',
         titleColor: '#fff',
@@ -22,7 +22,7 @@ form.addEventListener('submit', e => {
     })
     .catch(value => {
       iziToast.show({
-        message: `❌ Rejected promise in ${delay}ms`,
+        message: `❌ Rejected promise in ${value}ms`,
         position: 'topRight',
         backgroundColor: '#ef4040',
         titleColor: '#fff',
